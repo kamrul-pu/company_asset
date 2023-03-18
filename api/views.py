@@ -63,6 +63,7 @@ class DeviceLogDetail(generics.RetrieveUpdateDestroyAPIView):
         company = self.request.user.employee.company
         queryset = DeviceLog.objects.filter(device__company=company)
         obj = get_object_or_404(queryset,pk=self.kwargs['pk'])
+        return obj
 
 
 
